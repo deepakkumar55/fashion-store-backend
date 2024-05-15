@@ -5,7 +5,7 @@ require('dotenv').config()
 const connectDB = require('./config/db')
 const router = require('./routes')
 
-app.use(cors())
+
 const app = express()
 var whitelist = ['https://fashion-store-frontend-dun.vercel.app','https://fashion-store-frontend-hymnt0sib-deepakkumar55s-projects.vercel.app', 'https://fashion-store-frontend-git-main-deepakkumar55s-projects.vercel.app']
 var corsOptions = {
