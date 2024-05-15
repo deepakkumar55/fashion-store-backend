@@ -7,16 +7,12 @@ const router = require('./routes')
 
 
 const app = express()
-var whitelist = ['https://fashion-store-frontend-dun.vercel.app','https://fashion-store-frontend-hymnt0sib-deepakkumar55s-projects.vercel.app', 'https://fashion-store-frontend-git-main-deepakkumar55s-projects.vercel.app']
-var corsOptions = {
-  origin: function (origin, callback) {
-    if (whitelist.indexOf(origin) !== -1) {
-      callback(null, true)
-    } else {
-      callback(new Error('Not allowed by CORS'))
-    }
-  }
-}
+app.use(cors({
+    origin: 'https://fashion-store-frontend-dun.vercel.app',
+    credentials: true
+  }));
+
+  
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', 'https://fashion-store-frontend-dun.vercel.app');
     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
